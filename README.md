@@ -1,4 +1,4 @@
-# Delta, Gamma, DV01 and Convexity
+# Delta, Gamma, Duration and Convexity
 
 ## A Common Language for Non-Linear Financial Risk
 
@@ -8,25 +8,25 @@ The central idea is simple: both markets use a first-order sensitivity plus a se
 
 ## The common structure
 
-For a value function \(V(x)\), a small move \(\Delta x\) gives
+For a value function $(V(x))$, a small move $(\Delta x)$ gives
 
-\[
+$$
 \Delta V \approx \frac{\partial V}{\partial x}\Delta x
 + \frac{1}{2}\frac{\partial^2 V}{\partial x^2}(\Delta x)^2.
-\]
+$$
 
 | Market | State move | Linear term | Curvature term |
 | --- | --- | --- | --- |
-| Options | Spot move \(\Delta S\) | \(\Delta\,\Delta S\) | \(\frac{1}{2}\Gamma(\Delta S)^2\) |
-| Rates | Yield move \(b\) in bp | \(-DV01\,b\) | \(\frac{1}{2}\,C_\$\,(b/10{,}000)^2\) |
+| Options | Spot move $\Delta S$ | $\Delta\,\Delta S$ | $\frac{1}{2}\Gamma(\Delta S)^2$ |
+| Rates | Yield move $b$ in bp | $-DV01\,b$ | $\frac{1}{2}\,C_\$\,(b/10{,}000)^2$ |
 
-This repo quotes **DV01 as a positive loss magnitude for a +1 bp yield move** on a conventional long bond. \(C_\$\) is dollar convexity, the second derivative of price with respect to decimal yield. See [the methodology](docs/methodology.md) for definitions and caveats.
+This repo quotes **DV01 as a positive loss magnitude for a +1 bp yield move** on a conventional long bond. $C_\$$ is dollar convexity, the second derivative of price with respect to decimal yield. See [the methodology](docs/methodology.md) for definitions and caveats.
 
 ## Quick start
 
 Python 3.9 or later is sufficient; the library has no runtime dependencies. Run the example and tests directly from a clean checkout:
 
-```bash
+```
 make example
 make test
 ```
@@ -35,14 +35,14 @@ The example prints exact repricing alongside linear and second-order estimates f
 
 For development environments with a current pip, an editable install also exposes the `risk-language` command:
 
-```bash
+```
 python3 -m pip install -e .
 risk-language
 ```
 
 ## Repository map
 
-```text
+```
 src/risk_language/   Transparent reference implementations
 tests/               Unit and approximation checks
 docs/                Definitions, conventions, and methodology
