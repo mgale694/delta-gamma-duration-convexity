@@ -4,10 +4,10 @@
 
 For a twice-differentiable value $V(x)$, the second-order Taylor approximation around $x$ is
 
-$
+$$
 V(x + \Delta x) - V(x)
 \approx V'(x)\Delta x + \frac{1}{2}V''(x)(\Delta x)^2.
-$
+$$
 
 It is local: the sensitivities are measured at the starting point and other state variables are assumed fixed.
 
@@ -15,16 +15,16 @@ It is local: the sensitivities are measured at the starting point and other stat
 
 For spot $S$:
 
-$
+$$
 \Delta V \approx \Delta\,\Delta S + \frac{1}{2}\Gamma(\Delta S)^2,
-$
+$$
 
 where
 
-$
+$$
 \Delta = \frac{\partial V}{\partial S}, \qquad
 \Gamma = \frac{\partial^2 V}{\partial S^2}.
-$
+$$
 
 If price and spot use the same currency, delta is currency per spot-currency unit and gamma is currency per squared spot-currency unit. The included reference model is a non-dividend-paying European call under Black–Scholes; it isolates spot sensitivity and holds rate, volatility, and time fixed during each repricing.
 

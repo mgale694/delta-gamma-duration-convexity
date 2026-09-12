@@ -2,9 +2,22 @@
 
 ## A Common Language for Non-Linear Financial Risk
 
-This repository is the public, reproducible evidence base for a research project comparing local risk measures in options and rates.
+This repository is the public, reproducible evidence base for a research project investigating how local risk measures behave as the market moves away from the point at which those measures were calculated.
 
-The central idea is simple: both markets use a first-order sensitivity plus a second-order curvature term. The details matter, though—state variables, units, scaling, and sign conventions are not interchangeable.
+The common mathematical structure is the starting point: options use delta and gamma to describe local slope and curvature, while rates use duration/DV01 and convexity. The more interesting question is **how far those local approximations can be pushed before they stop providing a reliable estimate of actual P&L, and how much the second-order term improves that estimate**.
+
+## Research question
+
+How reliable are first-order risk measures as the underlying market moves, and how much does second-order curvature improve the approximation?
+
+The project uses bonds and options as two controlled examples of the same general problem:
+
+- compare exact repricing with a first-order approximation;
+- add the second-order term and measure the improvement;
+- examine how approximation error changes as the shock grows;
+- make clear where the analogy between the two markets is useful, and where differences in state variables, units, scaling, and sign conventions matter.
+
+The goal is not to show that duration/convexity and delta/gamma are interchangeable. It is to use them to study a broader idea: **risk measures are local descriptions of nonlinear pricing functions**.
 
 ## The common structure
 
@@ -26,7 +39,7 @@ This repo quotes **DV01 as a positive loss magnitude for a +1 bp yield move** on
 
 Python 3.9 or later is sufficient; the library has no runtime dependencies. Run the example and tests directly from a clean checkout:
 
-```
+```bash
 make example
 make test
 ```
@@ -35,14 +48,14 @@ The example prints exact repricing alongside linear and second-order estimates f
 
 For development environments with a current pip, an editable install also exposes the `risk-language` command:
 
-```
+```bash
 python3 -m pip install -e .
 risk-language
 ```
 
 ## Repository map
 
-```
+```text
 src/risk_language/   Transparent reference implementations
 tests/               Unit and approximation checks
 docs/                Definitions, conventions, and methodology
@@ -60,7 +73,9 @@ The public repo should make every technical claim in the article or video indepe
 
 ## Status
 
-Foundation scaffold complete. The next research milestone is to lock representative instrument parameters, generate error curves over shock size, and promote validated results into the article.
+Foundation scaffold complete. The next research milestone is to lock representative instrument parameters, generate exact-versus-approximate P&L and error curves over shock size, and determine where first-order approximations begin to deteriorate materially and how much second-order terms repair that error.
+
+Validated conclusions can then be promoted into the Atlas article and used selectively in the simpler long-form video.
 
 ## Contributing
 
