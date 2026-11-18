@@ -73,9 +73,7 @@ The public repo should make every technical claim in the article or video indepe
 
 ## Status
 
-Foundation scaffold complete. The next research milestone is to lock representative instrument parameters, generate exact-versus-approximate P&L and error curves over shock size, and determine where first-order approximations begin to deteriorate materially and how much second-order terms repair that error.
-
-Validated conclusions can then be promoted into the Atlas article and used selectively in the simpler long-form video.
+Run `make test evidence` for the tested bond and option sweeps. The [experiment design](docs/experiments.md) records inputs, error conventions, expiry controls, figure commands and source references.
 
 ## Contributing
 
