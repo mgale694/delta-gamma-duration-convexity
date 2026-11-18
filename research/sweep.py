@@ -97,7 +97,7 @@ def scaled_calls():
 def write_csv(path, rows):
     rows = list(rows)
     with path.open('w', newline='') as stream:
-        writer = csv.DictWriter(stream, rows[0].keys())
+        writer = csv.DictWriter(stream, rows[0].keys(), lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
 
