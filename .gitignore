@@ -13,3 +13,9 @@ build/
 outputs/*
 !outputs/README.md
 
+!outputs/scenarios.csv
+!outputs/crossings.csv
+!outputs/scaled-calls.csv
+!outputs/bond-and-call.png
+!outputs/expiry-stress.png
+.ipynb_checkpoints/

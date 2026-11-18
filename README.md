@@ -71,7 +71,13 @@ outputs/             Reproducible generated artifacts only
 
 The public repo should make every technical claim in the article or video independently inspectable. It should not become a mirror of editorial drafts.
 
-## Status
+## Explore the article evidence
+
+Start with the [walkthrough notebook](notebooks/local-risk.ipynb) to vary a shock or expiry. Both article figures and the full-precision tables are [tracked in outputs](outputs/README.md). A clean checkout includes the evidence used in the draft.
+
+For interactive use, open the notebook in a Python 3 Jupyter kernel. To regenerate the figures, install Matplotlib (`python3 -m pip install matplotlib`) and run `make figures`. The numerical sweep and tests require only the standard library.
+
+## Reproduction
 
 Run `make test evidence` for the tested bond and option sweeps. The [experiment design](docs/experiments.md) records inputs, error conventions, expiry controls, figure commands and source references.
 
